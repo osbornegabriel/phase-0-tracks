@@ -50,3 +50,15 @@ main {
   padding-left: 10px;
   min-width: 30%;
 }
+
+/* @media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+} */
+
+ @media screen and (max-width: 350px) {
+  main {
+    display: block;
+  }
+}
