@@ -1,5 +1,10 @@
+#wrapper {
+  position: absolute;
+}
+
 body {
   max-width: 960px;
+  margin: auto;
 }
 
 blockquote {
