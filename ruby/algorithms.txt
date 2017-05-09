@@ -75,6 +75,33 @@ end
 #Turn into ice_cream array
 
 #For each value, ask "From 1-10, how much do you like this ice cream?"
-#Save ratings paired with each value
+enjoyment=gets.chomp
+enjoyment.to_i
 
-#
+#Pair enjoyment to each proper ice_cream
+
+#Compare ratings for enjoyment, use highest value and delete rest
+#If tied favorite flavors, randomly select one of the favorite flavors
+
+#Determine size you should order
+puts "From 1-3, how hungry are you for ice cream?"
+hunger=gets.chomp
+hunger.to_i
+
+#if hunger=3
+- size = large
+elsif hunger=2
+- size = medium
+else
+- size = small
+
+#When "are there people in front of you in line?" = false
+#Walk up to counter
+
+#Say nice compliment to person working at ice cream parlor
+
+#Order favorite_flavor
+#When asked for size, answer size
+
+#Pay for order
+#Enjoy ice cream
