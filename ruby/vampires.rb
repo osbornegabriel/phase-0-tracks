@@ -1,3 +1,4 @@
+#This is the questionaire section!
 puts "What is your name?"
 name = gets.chomp
 
@@ -12,12 +13,14 @@ end
 
 year = 0
 while year == 0
-	puts "What year were you born?(please use a number)"
+	puts "What year were you born?(please use a four-digit number)"
 	year = gets.chomp.to_i
 	if year == 0
 		puts "Error, that is not a year. Are you even taking this job interview seriously? (Please use the numberpad!)"
 	end
 end
+
+true_age = 2017 - year
 
 garlic = 0
 while (garlic != "y") && (garlic != "n")
@@ -35,4 +38,9 @@ while (insurance != "y") && (insurance != "n")
 	if (insurance != "y") && (insurance != "n")
 		puts "That's neither a...you know what, I know you're just messing with me now."
 	end
+end
+
+# This is the vampireness-calculation section!
+if ((age == true_age) && (age == true_age + 1)) == ((garlic == y) && (insurance == y))
+	result = "Probably not a vampire"
 end
