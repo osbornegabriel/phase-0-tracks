@@ -1,13 +1,38 @@
 puts "What is your name?"
 name = gets.chomp
 
-puts "How old are you?"
-age = gets.chomp.to_i
-puts "What year were you born?"
-year = gets.chomp.to_i
+age = 0
+while age == 0
+	puts "How old are you? (please use a number)"
+	age = gets.chomp.to_i
+	if age == 0
+		puts "Error, that is not a number. If you want this job you really need to work on your reading comprehension! (Or you spelled it out, please use numberpad)"
+	end
+end
 
-puts "Our company cafeteria serves garlic bread. Should we order some for you?"
-garlic = gets.chomp
+year = 0
+while year == 0
+	puts "What year were you born?(please use a number)"
+	year = gets.chomp.to_i
+	if year == 0
+		puts "Error, that is not a year. Are you even taking this job interview seriously? (Please use the numberpad!)"
+	end
+end
 
-puts "Would you like to enroll in the company's health insurance?"
-insurace = gets.chomp
+garlic = 0
+while (garlic != "y") && (garlic != "n")
+	puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
+	garlic = gets.chomp
+	if (garlic != "y") && (garlic != "n")
+		puts "That neither a 'y or a 'n'. I really need to have a discussion with our recruiter."
+	end
+end
+
+insurance = 0
+while (insurance != "y") && (insurance != "n")
+	puts "Would you like to enroll in the company's health insurance?(y/n)"
+	insurance = gets.chomp
+	if (insurance != "y") && (insurance != "n")
+		puts "That's neither a...you know what, I know you're just messing with me now."
+	end
+end
