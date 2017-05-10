@@ -1,6 +1,6 @@
 #This is the questionaire section!
 puts "What is your name?"
-name = gets.chomp
+name = gets.chomp.downcase
 
 age = 0
 while age == 0
@@ -41,6 +41,27 @@ while (insurance != "y") && (insurance != "n")
 end
 
 # This is the vampireness-calculation section!
-if ((age == true_age) && (age == true_age + 1)) == ((garlic == y) && (insurance == y))
-	result = "Probably not a vampire"
+
+vampire = 0
+if ((age == true_age) || (age == true_age - 1)) && ((garlic == "y") && (insurance == "y"))
+	vampire = "Probably not a vampire"
 end
+
+#If the employee got their age wrong, hates garlic bread, and doesn’t want insurance,
+#the result is “Almost certainly a vampire.”
+if ((age != true_age) || (age != true_age - 1)) && ((garlic == "n") && (insurance == "n"))
+  vampire = "Almost definitely a vampire"
+end
+
+#Even if the employee is an amazing liar otherwise, anyone going by the name of “Drake Cula” or “Tu Fang” is clearly a vampire, because come on. In that case, you should print “Definitely a vampire.”
+if (name == "drake cula") || (name == "tu fang")
+	vampire = "Definitely a vampire"
+end
+#Otherwise, print “Results inconclusive.”
+if vampire == 0
+	vampire = "Results inconclusive"
+end
+
+name = name.capitalize!
+
+puts "Results for #{name}: #{vampire}"
