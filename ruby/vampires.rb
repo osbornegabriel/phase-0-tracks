@@ -102,3 +102,5 @@ end
 if n < 3
   puts "Results Complete: Have a good day!"
 end
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
