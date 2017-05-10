@@ -81,9 +81,22 @@ while (i > 0) && (n < 3)
 		vampire = "Results Inconclusive"
 	end
 
+	#This is the sunshine allergy calculator
+	allergy = 0
+	while (allergy != "sunshine") && (allergy != "done")
+		puts "Do you have any allergies? (type 'done' when finished)"
+		allergy = gets.chomp.downcase
+	end
+
+	if allergy == "sunshine"
+		vampire = "Probably a vampire"
+	end
+
+
 	name = name.capitalize!
 	
 	puts "Results for #{name}: #{vampire}"
+
 end
 
 if n < 3
