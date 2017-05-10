@@ -19,3 +19,12 @@ if estimated_age == "unsure"
 elsif estimated_age != nil
   then age = estimated_age.to_i
 end
+
+puts "Your hamster's name is #{name}! The volume level of your hamster is #{volume}.
+Your hamster is #{fur_color}. Estimated age of hamster: #{age}"
+
+if adoption
+	puts "This hamster should totally be adopted by a loving family!"
+else
+	puts "Who brought #{name} in? Put it to work in the galley."
+end
