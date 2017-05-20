@@ -1,3 +1,5 @@
+#This method converts all vowels to the next vowel in the alphabet,
+#and all consonants to the next consonant in the alphabet
 def letter_converter(letter)
 	list_vowels = "aeioua"
 	list_consonants = "bcdfghjklmnpqrstvwxyzb"
@@ -14,6 +16,7 @@ def letter_converter(letter)
 	end
 end
 
+#This method converts inputted name to an alias name
 def alias_creator(name)
 #Reverse first and last names
 	alias_name = name.split(' ').reverse!.join(' ')
@@ -51,5 +54,5 @@ until full_name == "quit"
 	full_name = gets.chomp
 end
 
-
+#This prints the original names along with their new alias names
 converted_names.each {|fake_name, real_name| puts "#{fake_name} is #{real_name}!"}
