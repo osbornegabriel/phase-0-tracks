@@ -1,6 +1,6 @@
 #Have user input their name
 puts "Welcome to alias_manager. What is your first and last name?"
-full_name = gets.chomp
+full_name = gets.chomp.downcase!
 
 #Reverse first and last names
 alias_name = full_name.split(' ').reverse!.join(' ')
@@ -8,18 +8,24 @@ p alias_name
 
 alias_letters = alias_name.split('')
 
-def vowel(vowel)
+def letter_converter(letter)
 	list_vowels = "aeioua"
-	if list_vowels.include? vowel
-		vowel_value = list_vowels.index(vowel)
-		p vowel_value
+	list_consonants = "bcdfghjklmnpqrstvwxyzb"
+	if list_vowels.include? letter
+		vowel_value = list_vowels.index(letter)
 		vowel_value += 1
-		vowel = list_vowels[vowel_value]
+		letter = list_vowels[vowel_value]
+	elsif list_consonants.include? letter
+		consonant_value = list_consonants.index(letter)
+		consonant_value += 1
+		letter = list_consonants[consonant_value]
+	else
+		letter = letter
 	end
 end
 
 alias_letters.map! do |letter|
-	vowel(letter)
+	letter_converter(letter)
 end
 
 p alias_letters
