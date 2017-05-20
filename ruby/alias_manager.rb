@@ -34,6 +34,7 @@ def alias_creator(name)
 	end
 
 	p alias_name
+	name = alias_name
 end
 
 
@@ -41,8 +42,14 @@ end
 puts "Welcome to alias_manager. What is your first and last name?(Type 'quit' to quit)"
 full_name = gets.chomp
 
+converted_names = {}
+
 until full_name == "quit"
-	alias_creator(full_name)
+	alias_name = alias_creator(full_name)
+	converted_names[alias_name] = full_name
 	puts "What is the next full name you wish to change?(Type 'quit' to quit.)"
 	full_name = gets.chomp
 end
+
+
+converted_names.each {|fake_name, real_name| puts "#{fake_name} is #{real_name}!"}
