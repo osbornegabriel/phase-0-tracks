@@ -30,5 +30,10 @@ end
 
 alias_name = alias_letters.join.capitalize!
 
+if alias_name.index(" ") != nil
+	start_of_last_name = alias_name.index(" ")
+	start_of_last_name += 1
+	alias_name[start_of_last_name] = alias_name[start_of_last_name].capitalize
+end
 
 p alias_name
