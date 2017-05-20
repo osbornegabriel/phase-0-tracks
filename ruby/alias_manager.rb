@@ -4,7 +4,7 @@ full_name = gets.chomp.downcase!
 
 #Reverse first and last names
 alias_name = full_name.split(' ').reverse!.join(' ')
-p alias_name
+alias_name
 
 alias_letters = alias_name.split('')
 
@@ -28,4 +28,7 @@ alias_letters.map! do |letter|
 	letter_converter(letter)
 end
 
-p alias_letters
+alias_name = alias_letters.join.capitalize!
+
+
+p alias_name
