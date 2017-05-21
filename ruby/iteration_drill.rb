@@ -50,6 +50,26 @@ p organized_supplies
 # For instance: are boots in your list of supplies?
 # ----
 
+#value plugged into method will be compared to each item in zombie_supplies
+#Use a counter that keeps changing which item is being compared, call up with index
+#false value that's changed to 'true' if there's a match
+
+def supply_check(supply, supplies)
+	is_packed = false
+	pack_counter = 0
+	until supplies[pack_counter] == nil
+		if supply == supplies[pack_counter]
+			is_packed = true
+		end
+		pack_counter += 1
+	end
+	p is_packed
+end
+
+supply_check("boots", zombie_apocalypse_supplies)
+
+
+
 # 4. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5. Do not use any special built-in methods.
