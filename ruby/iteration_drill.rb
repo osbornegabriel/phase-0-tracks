@@ -6,6 +6,11 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
 # ----
+#Note to graders: I initially used the .each method to solve this,
+#and then thought I wasn't supposed to after reading some slack comments. So I changed what I coded.
+#But then as I got to the next few questions, I realized we're allowed to use methods
+#For this first problem. I didn't revert to my original code though.
+
 print_supply = []
 z_counter = 0
 loop do
@@ -146,6 +151,19 @@ extinct_animals = {
 # 1. Iterate through extinct_animals hash, printing each key/value pair
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
+
+#Create extinct_animals key
+#Make print counter = 0, have p items until keys[print_counter] == number of indexed items
+#Modify key to match "#{animal}=>#{year}*", make addition = new statement
+#Add addition to full_statement
+
+full_statement = ""
+extinct_animals.each do|animal, year|
+	statement_addition = "#{animal}=>#{year}*"
+	full_statement = full_statement+statement_addition
+end
+
+p full_statement
 
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000. Do not use any special built-in methods.
