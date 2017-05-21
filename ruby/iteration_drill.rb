@@ -152,11 +152,6 @@ extinct_animals = {
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
 
-#Create extinct_animals key
-#Make print counter = 0, have p items until keys[print_counter] == number of indexed items
-#Modify key to match "#{animal}=>#{year}*", make addition = new statement
-#Add addition to full_statement
-
 full_statement = ""
 extinct_animals.each do|animal, year|
 	statement_addition = "#{animal}=>#{year}*"
@@ -169,11 +164,31 @@ p full_statement
 # the year 2000. Do not use any special built-in methods.
 # ----
 
+# twentieth_century_extinct = {}
+
+# extinct_animals.each do |animal, year|
+# 	if year < 2000
+# 	  twentieth_century_extinct[animal] = extinct_animals[animal]
+# 	end
+# end
+
+# extinct_animals = twentieth_century_extinct
+# p extinct_animals
+
+
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
 # so they accurately reflect what year the animal went extinct.
 # Do not use any special built-in methods.
 # ----
+
+# extinct_animals.each do |animal, year|
+# 	new_year = year+3
+# 	extinct_animals[animal] = new_year
+# end
+
+# p extinct_animals
+
 
 # 4. You've heard that the following animals might be extinct, but you're not sure.
 # Check if they're included in extinct_animals, one by one:
@@ -183,10 +198,38 @@ p full_statement
 # Do not use any special built-in methods.
 # ----
 
+extinct = false
+extinct_animals.each do |animal, year|
+	if animal == "Andean Cat"
+		extinct = true
+	end
+end
+p extinct
+
+extinct = false
+extinct_animals.each do |animal, year|
+	if animal == "Dodo"
+		extinct = true
+	end
+end
+p extinct
+
+extinct = false
+extinct_animals.each do |animal, year|
+	if animal == "Saiga Antelope"
+		extinct = true
+	end
+end
+p extinct
+
 # 5. We just found out that the Passenger Pigeon is actually not extinct!
 # Remove them from extinct_animals and return the key value pair as a two item array.
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
 # ----
 
+living_animals = extinct_animals.reject{|animal, year| animal != "Passenger Pigeon"}
+p living_animals
 
+extinct_animals = extinct_animals.reject{|animal, year| animal == "Passenger Pigeon"}
+p extinct_animals
