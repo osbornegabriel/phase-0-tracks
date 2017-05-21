@@ -75,20 +75,21 @@ supply_check("boots", zombie_apocalypse_supplies)
 # leaving only 5. Do not use any special built-in methods.
 # ----
 
-# Create shrunk_supplies array
-# have counter that is less than 5, ends loop if reaches 5
-# use counter as index position to move item from zombie_supplies to shurnk_supplies
-# zombie_supples = shrunk supplies
-shrunk_supplies = []
-supply_count = 0
+# Algorhithm plan: 1) Create shrunk_supplies array
+# 2) have counter that is less than 5, ends loop if reaches 5
+# 3) use counter as index position to move item from zombie_supplies to shurnk_supplies
+# 4) zombie_supples = shrunk supplies
 
-while supply_count < 5
-	shrunk_supplies[supply_count] = zombie_apocalypse_supplies[supply_count]
-	supply_count += 1
-end
+# shrunk_supplies = []
+# supply_count = 0
 
-zombie_apocalypse_supplies = shrunk_supplies
-p zombie_apocalypse_supplies
+# while supply_count < 5
+# 	shrunk_supplies[supply_count] = zombie_apocalypse_supplies[supply_count]
+# 	supply_count += 1
+# end
+
+# zombie_apocalypse_supplies = shrunk_supplies
+# p zombie_apocalypse_supplies
 
 
 # 5. You found another survivor! This means you can combine your supplies.
@@ -96,9 +97,39 @@ p zombie_apocalypse_supplies
 # and their supplies below. You should get rid of any duplicate items.
 # Find the built-in method that helps you accomplish this in the Ruby
 # documentation for Arrays.
+
+#Create combined_supplies, place supplies into that array
+#packed = false
+#create big counter to check each supply in other_surivor_supplies
+#use counter to compare new supply on other_survivor_supplies to combined_supplie
+#if there are any == matches, change packed to true
+#if packed != true, move that 
+#Add one to big counter
+#break when other_survivor_supplies[big counter] == nil
+
 other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
 # ----
+combined_supplies = zombie_apocalypse_supplies
+supply_counter = 0
+
+until other_survivor_supplies[supply_counter] == nil
+	packed = false
+	compare_counter = 0
+	until combined_supplies[compare_counter] == nil
+		if other_survivor_supplies[supply_counter] == combined_supplies[compare_counter]
+			packed = true
+		end
+		compare_counter += 1
+	end
+	if packed != true
+		combined_supplies << other_survivor_supplies[supply_counter]
+	end
+	supply_counter += 1
+end
+
+p combined_supplies
+
 
 # Hash Drills
 
