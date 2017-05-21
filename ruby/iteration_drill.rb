@@ -6,10 +6,44 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # 1. Iterate through the zombie_apocalypse_supplies array,
 # printing each item in the array separated by an asterisk
 # ----
+print_supply = []
+z_counter = 0
+loop do
+	supply_asterisk = "*" + zombie_apocalypse_supplies[z_counter]
+	print_supply << supply_asterisk
+	z_counter += 1
+	break if zombie_apocalypse_supplies[z_counter] == zombie_apocalypse_supplies[-1]
+end
+
+supply_asterisk = "*" + zombie_apocalypse_supplies[-1]
+print_supply << supply_asterisk
+
+puts print_supply
 
 # 2. In order to keep yourself organized, sort your zombie_apocalypse_supplies
 # in alphabetical order. Do not use any special built-in methods.
 # ----
+alphabet = "abcdefghijklmnopqrstuvwxyz "
+alpha_counter = 0
+organized_supplies = []
+
+until alphabet[alpha_counter] == alphabet[-1]
+	z_counter = 0
+	until zombie_apocalypse_supplies[z_counter] == zombie_apocalypse_supplies[-1]
+		if alphabet[alpha_counter] == zombie_apocalypse_supplies[z_counter][0].downcase
+			organized_supplies << zombie_apocalypse_supplies[z_counter]
+		end
+		z_counter += 1
+	end
+	if alphabet[alpha_counter] == zombie_apocalypse_supplies[z_counter][0]
+		organized_supplies << zombie_apocalypse_supplies[z_counter]
+	end
+	alpha_counter += 1
+end
+
+p organized_supplies
+
+
 
 # 3. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies. Do not use any special built-in methods.
@@ -69,3 +103,5 @@ extinct_animals = {
 # Find the built-in method that helps you accomplish this in the Ruby documentation
 # for Hashes.
 # ----
+
+
