@@ -75,6 +75,22 @@ supply_check("boots", zombie_apocalypse_supplies)
 # leaving only 5. Do not use any special built-in methods.
 # ----
 
+# Create shrunk_supplies array
+# have counter that is less than 5, ends loop if reaches 5
+# use counter as index position to move item from zombie_supplies to shurnk_supplies
+# zombie_supples = shrunk supplies
+shrunk_supplies = []
+supply_count = 0
+
+while supply_count < 5
+	shrunk_supplies[supply_count] = zombie_apocalypse_supplies[supply_count]
+	supply_count += 1
+end
+
+zombie_apocalypse_supplies = shrunk_supplies
+p zombie_apocalypse_supplies
+
+
 # 5. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
 # and their supplies below. You should get rid of any duplicate items.
