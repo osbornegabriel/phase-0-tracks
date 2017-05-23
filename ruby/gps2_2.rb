@@ -21,16 +21,16 @@
 # output: updated hash
 
 # Method to remove an item from the list
-# input: 
-# steps:
+# input: use (list, item_name) for input
+# steps: use list[item_name] with .delete method to remove value and key
 # output: updated hash
 
 # Method to update the quantity of an item
-# input:
-# steps:
-# output:
+# input: 3 parameters for method - (list, item_name, new_quantity)
+# steps: Add new_quantity to item_name, using: list[item_name] = new quantity
+# output: updated value in hash
 
 # Method to print a list and make it look pretty
 # input: hash
-# steps: use .each method
+# steps: p hash (use .each method)
 # output: puts "You have #{value} many #{key}"
