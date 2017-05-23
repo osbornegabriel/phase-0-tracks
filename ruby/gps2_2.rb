@@ -12,7 +12,17 @@
 # output: [what data type goes here, array or hash?]
 
 
+def create_list(list, string_of_items)
+	list_array = string_of_items.split(" ")
+	list_array.each do |item|
+		item_key = item.to_sym
+		list[item_key] = 1		
+	end
+	return list
+end
 
+food = {}
+p create_list(food, "apple banana peanuts")
 # Method to add an item to a list
 # input: list, item name, and optional quantity
 # steps:
