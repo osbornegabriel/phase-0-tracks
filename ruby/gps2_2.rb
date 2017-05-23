@@ -24,7 +24,7 @@ end
 
 food = {}
 food = create_list(food, "apple banana peanuts")
-
+p food
 # Method to add an item to a list
 # input: list, item name, and optional quantity
 # steps:
@@ -32,24 +32,32 @@ food = create_list(food, "apple banana peanuts")
 	# list[item_name] = quantity
 # output: updated hash
 def add_item(list, item_name_string, quantity=1)
-	p list
 	item_key = item_name_string.to_sym
 	list[item_key] = quantity
-	p list
+	return list
 end
 
 food = add_item(food, "grapes")
 p food
-# p food
+
 # Method to remove an item from the list
 # input: use (list, item_name) for input
 # steps: use list[item_name] with .delete method to remove value and key
 # output: updated hash
+def remove_item(list, key_name)
+	list.delete(key_name)
+	return list
+end
+
+food = remove_item(food, :apple)
+p food
 
 # Method to update the quantity of an item
 # input: 3 parameters for method - (list, item_name, new_quantity)
 # steps: Add new_quantity to item_name, using: list[item_name] = new quantity
 # output: updated value in hash
+
+
 
 # Method to print a list and make it look pretty
 # input: hash
