@@ -12,18 +12,21 @@
 # output: [what data type goes here, array or hash?]
 
 
-def create_list(list, string_of_items)
+def create_list(list, string_of_items, quantity_as_string)
 	list = {}
 	list_array = string_of_items.split(" ")
+	quantity_array = quantity_as_string.split(" ")
+	item_list_counter = 0
 	list_array.each do |item|
 		item_key = item.to_sym
-		list[item_key] = 1		
+		list[item_key] = quantity_array[item_list_counter]
+		item_list_counter += 1
 	end
 	return list
 end
 
 food = {}
-food = create_list(food, "apple banana peanuts")
+food = create_list(food, "lemonade ")
 # p food
 # Method to add an item to a list
 # input: list, item name, and optional quantity
