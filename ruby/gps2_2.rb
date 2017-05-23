@@ -13,8 +13,8 @@
 
 def create_list(list, string_of_items)
 	list = {}
-	list_array = string_of_items.split(" ")
-	list_array.each do |item|
+	item_array = string_of_items.split(" ")
+	item_array.each do |item|
 		item_key = item.to_sym
 		list[item_key] = 1
 	end
@@ -25,10 +25,10 @@ end
 #The new_create_list method allows you to add items with quantities at the same time
 # def new_create_list(list, string_of_items, quantity_as_string)
 # 	list = {}
-# 	list_array = string_of_items.split(" ")
+# 	item_array = string_of_items.split(" ")
 # 	quantity_array = quantity_as_string.split(" ")
 # 	item_list_counter = 0
-# 	list_array.each do |item|
+# 	item_array.each do |item|
 # 		item_key = item.to_sym
 # 		list[item_key] = quantity_array[item_list_counter]
 # 		item_list_counter += 1
@@ -63,7 +63,7 @@ def remove_item(list, key_name)
 	return list
 end
 
-food = remove_item(food, :apple)
+# food = remove_item(food, :apple)
 # p food
 
 # Method to update the quantity of an item
@@ -75,7 +75,7 @@ def update_quantity(list, key_name, quantity=1)
 	return list
 end
 
-food = update_quantity(food, :apple, 5)
+# food = update_quantity(food, :apple, 5)
 # p food
 
 # Method to print a list and make it look pretty
@@ -83,8 +83,8 @@ food = update_quantity(food, :apple, 5)
 # steps: p hash (use .each method)
 # output: puts "You have #{value} many #{key}"
 def print_list(list)
-	list.each do |item, quantity|
-		puts "You have #{quantity} many #{item}!!! :D" 
+	list.each do |key, value|
+		puts "You have #{value} many #{key}!!! :D" 
 	end
 end
 
