@@ -11,22 +11,33 @@
   # print the list to the console [can you use one of your other methods here?]
 # output: [what data type goes here, array or hash?]
 
-
-def create_list(list, string_of_items, quantity_as_string)
+def create_list(list, string_of_items)
 	list = {}
 	list_array = string_of_items.split(" ")
-	quantity_array = quantity_as_string.split(" ")
-	item_list_counter = 0
 	list_array.each do |item|
 		item_key = item.to_sym
-		list[item_key] = quantity_array[item_list_counter]
-		item_list_counter += 1
+		list[item_key] = 1
 	end
 	return list
 end
 
+
+#The new_create_list method allows you to add items with quantities at the same time
+# def new_create_list(list, string_of_items, quantity_as_string)
+# 	list = {}
+# 	list_array = string_of_items.split(" ")
+# 	quantity_array = quantity_as_string.split(" ")
+# 	item_list_counter = 0
+# 	list_array.each do |item|
+# 		item_key = item.to_sym
+# 		list[item_key] = quantity_array[item_list_counter]
+# 		item_list_counter += 1
+# 	end
+# 	return list
+# end
+
 food = {}
-food = create_list(food, "lemonade ")
+# food = create_list(food, "lemonade tomatoes onions ice_cream", "2 3 1 4")
 # p food
 # Method to add an item to a list
 # input: list, item name, and optional quantity
@@ -40,7 +51,7 @@ def add_item(list, item_name_string, quantity=1)
 	return list
 end
 
-food = add_item(food, "grapes")
+# food = add_item(food, "grapes")
 # p food
 
 # Method to remove an item from the list
@@ -76,5 +87,18 @@ def print_list(list)
 		puts "You have #{quantity} many #{item}!!! :D" 
 	end
 end
+
+# print_list(food)
+
+
+food = {}
+food = create_list(food, "pizza awesome_sauce wings")
+
+food = add_item(food, "lemonade", 2)
+food = add_item(food, "tomatoes", 3)
+food = add_item(food, "onions", 1)
+food = add_item(food, "ice_cream", 4)
+
+food = update_quantity(food, :ice_cream, 1)
 
 print_list(food)
