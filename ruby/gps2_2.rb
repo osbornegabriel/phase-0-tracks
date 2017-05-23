@@ -56,9 +56,13 @@ p food
 # input: 3 parameters for method - (list, item_name, new_quantity)
 # steps: Add new_quantity to item_name, using: list[item_name] = new quantity
 # output: updated value in hash
+def update_quantity(list, key_name, quantity=1)
+	list[key_name] = quantity
+	return list
+end
 
-
-
+food = update_quantity(food, :apple, 5)
+p food
 # Method to print a list and make it look pretty
 # input: hash
 # steps: p hash (use .each method)
