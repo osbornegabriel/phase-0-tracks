@@ -102,3 +102,34 @@ food = add_item(food, "ice_cream", 4)
 food = update_quantity(food, :ice_cream, 1)
 
 print_list(food)
+
+=begin
+
+What did you learn about pseudocode from working on this challenge?
+We spent a huge chunk of time on the pseudocode,
+which made the actually coding itself incredibly easy. All we had to do
+was follow the steps we'd already written out.
+
+What are the tradeoffs of using arrays and hashes for this challenge?
+Arrays allow you to use the index function, which is great for building counters and loops.
+However, hashes are the better path when you need to link to pieces of information together.
+
+What does a method return?
+A method returns a local change to a variable, so you have to assign the method's
+execution on the arguments to an independent variable if you wish to save the data changed.
+
+What kind of things can you pass into methods as arguments?
+You can use strings and numbers. You can use variables, however they must already have an
+assigned value to do so. (Even if it's an empty array or hash you established in a previous
+line.)
+
+How can you pass information between methods?
+You assign the arguments plugged into a method to a new variable, as in:
+variable = method(argument)
+Then you can plug that variable into a new method.
+
+What concepts were solidified in this challenge, and what concepts are still confusing?
+I did not realize you needed to use the return command or p in order to have the method
+execute. I did not understand the purpose of the return command until doing this lesson.
+Thankfully, my partner already knew so he got me up to speed.
+=end
