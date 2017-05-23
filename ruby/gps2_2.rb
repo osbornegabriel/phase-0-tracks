@@ -24,7 +24,7 @@ end
 
 food = {}
 food = create_list(food, "apple banana peanuts")
-p food
+# p food
 # Method to add an item to a list
 # input: list, item name, and optional quantity
 # steps:
@@ -38,7 +38,7 @@ def add_item(list, item_name_string, quantity=1)
 end
 
 food = add_item(food, "grapes")
-p food
+# p food
 
 # Method to remove an item from the list
 # input: use (list, item_name) for input
@@ -50,7 +50,7 @@ def remove_item(list, key_name)
 end
 
 food = remove_item(food, :apple)
-p food
+# p food
 
 # Method to update the quantity of an item
 # input: 3 parameters for method - (list, item_name, new_quantity)
@@ -62,8 +62,16 @@ def update_quantity(list, key_name, quantity=1)
 end
 
 food = update_quantity(food, :apple, 5)
-p food
+# p food
+
 # Method to print a list and make it look pretty
 # input: hash
 # steps: p hash (use .each method)
 # output: puts "You have #{value} many #{key}"
+def print_list(list)
+	list.each do |item, quantity|
+		puts "You have #{quantity} many #{item}!!! :D" 
+	end
+end
+
+print_list(food)
