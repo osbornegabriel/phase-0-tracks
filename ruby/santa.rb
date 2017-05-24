@@ -7,8 +7,13 @@ class Santa
 		print "That was a good #{cookie}!"
 	end
 
-	def initialize
+	def initialize(gender_string, ethnicity_string)
 		puts "Initializing Santa instance here"
+		@gender = gender_string
+		@ethnicity = ethnicity_string
+		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen",
+			 "Comet", "Cupid", "Donner", "Blitzen"]
+		@age = 0
 	end
 end
 
