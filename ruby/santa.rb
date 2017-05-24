@@ -8,12 +8,20 @@ class Santa
 		@age = 0
 	end
 
+	def age
+		return @age
+	end
+
 	def celebrate_birthday
 		@age += 1
 	end
 
 	def eat_milk_and_cookies(cookie)
 		print "That was a good #{cookie}!"
+	end
+
+	def ethnicity
+		return @ethnicity
 	end
 
 	def gender_bender=(new_gender_string)
@@ -79,3 +87,6 @@ p santas[0]
 
 santas[-1].gender_bender=("Not Your Business")
 p santas[-1]
+
+p santas[2].age
+p santas[2].ethnicity
