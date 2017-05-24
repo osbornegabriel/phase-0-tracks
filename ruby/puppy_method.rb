@@ -58,3 +58,8 @@ array_of_no_fun = []
 50.times do
   array_of_no_fun << No_fun.new
 end
+
+array_of_no_fun.each do |instance|
+  p instance.traffic(10)
+  instance.no_lunch_break
+end
