@@ -40,9 +40,9 @@
 
 
 class No_fun
-  def initialize
-    puts "*Alarm goes off*"
-  end
+  # def initialize
+  #   puts "*Alarm goes off*"
+  # end
 
   def traffic(integer)
     wasted_time = integer*3
@@ -54,6 +54,7 @@ class No_fun
   end
 end
 
+array_of_no_fun = []
 50.times do
-  No_fun.new
+  array_of_no_fun << No_fun.new
 end
