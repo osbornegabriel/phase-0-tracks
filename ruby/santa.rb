@@ -1,4 +1,7 @@
 class Santa
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
+
 	def initialize(gender_string, ethnicity_string)
 		puts "Initializing Santa instance here"
 		@gender = gender_string
@@ -8,9 +11,9 @@ class Santa
 		@age = 0
 	end
 
-	def age
-		return @age
-	end
+	# def age
+	# 	return @age
+	# end
 
 	def celebrate_birthday
 		@age += 1
@@ -20,13 +23,13 @@ class Santa
 		print "That was a good #{cookie}!"
 	end
 
-	def ethnicity
-		return @ethnicity
-	end
+	# def ethnicity
+	# 	return @ethnicity
+	# end
 
-	def gender_bender=(new_gender_string)
-		@gender = new_gender_string
-	end
+	# def gender_bender=(new_gender_string)
+	# 	@gender = new_gender_string
+	# end
 
 	def get_mad_at(reindeer_name_string)
 		@reindeer_ranking.delete(reindeer_name_string)
@@ -85,7 +88,7 @@ p santas[1]
 santas[0].get_mad_at("Comet")
 p santas[0]
 
-santas[-1].gender_bender=("Not Your Business")
+santas[-1].gender = "Not Your Business"
 p santas[-1]
 
 p santas[2].age
