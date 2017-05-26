@@ -11,6 +11,10 @@ class TodoList
 		@list.delete(completed_task)
 	end
 
+	def get_item(index_number)
+		@list[index_number]
+	end
+
 	def get_items
 		@list
 	end
