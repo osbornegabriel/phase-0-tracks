@@ -3,6 +3,10 @@ class TodoList
 		@list = task_array
 	end
 
+	def add_item(new_task)
+		@list << new_task
+	end
+
 	def get_items
 		@list
 	end
