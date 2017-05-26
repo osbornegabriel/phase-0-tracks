@@ -7,6 +7,10 @@ class TodoList
 		@list << new_task
 	end
 
+	def delete_item(completed_task)
+		@list.delete(completed_task)
+	end
+
 	def get_items
 		@list
 	end
