@@ -46,7 +46,7 @@ class Word_game
 
   def new_answer(answer)
     @answer = answer.downcase
-    @guess = answer.length.times {|i| "_ " * i}
+    @guess = "_ " * @answer.length
     if answer.length < 4
       @guess_limit = 6
     elsif answer.length > 6
