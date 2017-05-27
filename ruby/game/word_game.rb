@@ -16,6 +16,16 @@ class Word_game
     end
   end
 
+  def answer_comparison(letter)
+    @answer_array.length.times do
+      index_counter = 0
+      if @answer_array[index_counter] == letter
+        @answer_array[index_counter] = letter
+      end
+      index_counter += 1
+    end
+
+
   def guess
     if guess != answer && guess_limit != 0
       letter_guess = ""
