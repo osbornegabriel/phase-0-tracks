@@ -4,7 +4,6 @@ class Word_game
 
   def initialize(answer)
     @answer = answer.downcase
-    @answer_array = answer.split(//)
     @guess = answer.length.times {|i| "_ " * i}
     if answer.length < 4
       @guess_limit = 6
@@ -16,10 +15,10 @@ class Word_game
   end
 
   def answer_comparison(letter)
-    @answer_array.length.times do
+    @answer.length.times do
       index_counter = 0
       if @answer[index_counter] == letter
-        @answer_array[index_counter] = letter
+        @guess[index_counter*2] = letter
       end
       index_counter += 1
     end
