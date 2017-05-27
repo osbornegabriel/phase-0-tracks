@@ -12,6 +12,6 @@ describe Word_game do
   end
 
   it "guess_limit" do
-    expect(word_game.guess_limit).to eq 6
+    expect(word_game.guess_limit).to eq 8
   end
 end
