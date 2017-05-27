@@ -4,7 +4,7 @@ class Word_game
 
   def initialize(answer = "")
     @answer = answer.downcase
-    @guess = answer.length.times {|i| "_ " * i}
+    @guess = "_ " * @answer.length
     if answer.length < 4
       @guess_limit = 6
     elsif answer.length > 6
@@ -25,7 +25,7 @@ class Word_game
   end
 
 
-  def guess
+  def player_guess
     if @guess != @answer && @guess_limit != 0
       letter_guess = ""
       while letter_guess.length != 1
