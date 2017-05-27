@@ -1,6 +1,6 @@
 class Word_game
-  attr_reader :answer, :guess_limit
-  attr_accessor :guess
+  attr_reader :answer
+  attr_accessor :guess, :previous_guesses, :guess_limit
 
   def initialize(answer = "")
     @answer = answer.downcase
@@ -12,6 +12,8 @@ class Word_game
     else
       @guess_limit = 8
     end
+    @previous_guesses = []
+    @guess_limit.times [@previous_guesses << nil]
   end
 
   def answer_comparison(letter)
@@ -32,8 +34,13 @@ class Word_game
       while letter_guess.length != 1
         puts "What letter do you wish to guess?(Provide a single letter)"
         letter_guess = gets.chomp.downcase
+        while @previous_guesses.include?
+          puts "You've already used that letter. What letter do you wish to guess?"
+          letter_guess = gets.chomp.downcase
+        end
       end
       answer_comparison(letter_guess)
+      @previous_guesses[-@guess.limit] = letter_guess
       @guess_limit -= 1
     end
 
