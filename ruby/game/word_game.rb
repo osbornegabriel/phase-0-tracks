@@ -1,12 +1,11 @@
 class Word_game
-  attr_reader: :answer :answer_array :guess_limit
-  attr_accessor: :guess
+  attr_reader :answer, :answer_array, :guess_limit
+  attr_accessor :guess
 
   def initialize(answer)
-    @answer = answer
+    @answer = answer.downcase
     @answer_array = answer.split(//)
     @guess = answer.length.times {|i| "_ " * i}
-    end
     if answer.length < 4
       @guess_limit = 6
     elsif answer.length > 6
@@ -19,11 +18,12 @@ class Word_game
   def answer_comparison(letter)
     @answer_array.length.times do
       index_counter = 0
-      if @answer_array[index_counter] == letter
+      if @answer[index_counter] == letter
         @answer_array[index_counter] = letter
       end
       index_counter += 1
     end
+  end
 
 
   def guess
@@ -43,5 +43,6 @@ class Word_game
     else
       puts "You're not there yet, keep guessing!"
     end
+  end
 
 end
