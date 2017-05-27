@@ -1,4 +1,4 @@
-require_relative 'Word_game'
+require_relative 'word_game'
 
 describe Word_game do
   let(:word_game) {Word_game.new}
@@ -8,10 +8,12 @@ describe Word_game do
   end
 
   it "guess" do
-    expect(word_game.answer).to eq "_ "
+    expect(word_game.guess).to eq ""
+  end
 
-  it "guess_count" do
-    expect(word_game.answer).to eq 6
+  it "guess_limit" do
+    expect(word_game.guess_limit).to eq 6
+  end
 
 
 
