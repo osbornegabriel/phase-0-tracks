@@ -1,0 +1,24 @@
+#One user can enter a word (or phrase, if you would like your game to support that), and another user attempts to guess the word.
+
+- Provide prompt (gets.chomp)
+- use .split(//) to place into array
+
+use .length.times to create a string of "_ _ (number of letters) _ _"
+
+#Guesses are limited, and the number of guesses available is related to the length of the word.
+Use length with if, elsif, else to set guesses available
+
+#Repeated guesses do not count against the user.
+Add guesses into guess string with an extra "-"
+use include_if? with ! to filter out repeated guesses
+
+#The guessing player receives continual feedback on the current state of the word. So if the secret word is "unicorn", the user will start out seeing something like "_ _ _ _ _ _ _", which would become "_ _ _ c _ _ _" after the user enters a guess of "c".
+compare guess to each entry in the word array, using 0 starting counter until = .length
+if there's a match, use answer[counter] = guess
+
+
+#The user should get a congratulatory message if they win, and a taunting message if they lose.
+Each round say break if guess == prompt || guess_counter = guess_limit
+
+if guess == prompt display victory message
+else mock mercilessly
