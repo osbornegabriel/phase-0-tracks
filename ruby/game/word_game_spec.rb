@@ -14,4 +14,8 @@ describe Word_game do
   it "guess_limit" do
     expect(word_game.guess_limit).to eq 8
   end
+
+  it "answer_comparison" do
+    expect(word_game.answer_comparison("a")).to eq "_ a _ _ "
+  end
 end

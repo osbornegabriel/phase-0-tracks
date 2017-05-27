@@ -2,7 +2,7 @@ class Word_game
   attr_reader :answer
   attr_accessor :guess, :previous_guesses, :guess_limit
 
-  def initialize(answer = "")
+  def initialize(answer)
     @answer = answer.downcase
     @guess = "_ " * @answer.length
     if answer.length < 4
@@ -13,17 +13,15 @@ class Word_game
       @guess_limit = 8
     end
     @previous_guesses = []
-    @guess_limit.times [@previous_guesses << nil]
   end
 
   def answer_comparison(letter)
-    @answer.length.times do
-      index_counter = 0
+    @answer.length.times do |index_counter|
       if @answer[index_counter] == letter
         @guess[index_counter*2] = letter
       end
-      index_counter += 1
     end
+    return @guess
   end
 
 
@@ -40,7 +38,7 @@ class Word_game
         end
       end
       answer_comparison(letter_guess)
-      @previous_guesses[-@guess.limit] = letter_guess
+      @previous_guesses << letter_guess
       @guess_limit -= 1
     end
 
