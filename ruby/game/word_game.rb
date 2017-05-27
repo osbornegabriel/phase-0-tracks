@@ -2,7 +2,7 @@ class Word_game
   attr_reader :answer, :guess_limit
   attr_accessor :guess
 
-  def initialize(answer)
+  def initialize(answer = "")
     @answer = answer.downcase
     @guess = answer.length.times {|i| "_ " * i}
     if answer.length < 4
@@ -44,4 +44,15 @@ class Word_game
     end
   end
 
+  def new_answer(answer)
+    @answer = answer.downcase
+    @guess = answer.length.times {|i| "_ " * i}
+    if answer.length < 4
+      @guess_limit = 6
+    elsif answer.length > 6
+      @guess_limit = 10
+    else
+      @guess_limit = 8
+    end
+  end
 end
