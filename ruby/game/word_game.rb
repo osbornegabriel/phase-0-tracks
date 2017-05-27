@@ -26,21 +26,21 @@ class Word_game
 
 
   def player_guess
-    if @guess != @answer && @guess_limit != 0
+    until @guess_limit == 0 || @guess == @answer
       letter_guess = ""
+      p @guess
       while letter_guess.length != 1
-      puts "What letter do you wish to guess?"
-      letter_guess = gets.chomp.downcase
+        puts "What letter do you wish to guess?(Provide a single letter)"
+        letter_guess = gets.chomp.downcase
       end
       answer_comparison(letter_guess)
+      @guess_limit -= 1
     end
 
     if @guess == @answer
       puts "Great job!!! You guessed that the word is #{@answer}!"
-    elsif @guess != @answer && @guess_limit == 0
+    elsif @guess_limit == 0
       puts "Wow, you really suck at this. You couldn't guess the word if you had 26 guesses. Go sit in the corner and think about what you've done!"
-    else
-      puts "You're not there yet, keep guessing!"
     end
   end
 
