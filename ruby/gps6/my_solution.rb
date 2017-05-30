@@ -96,3 +96,20 @@ alaska.virus_effects
 
 #=======================================================================
 # Reflection Section
+=begin
+
+With hashes, between key to value you are able to use both the hash rocket '=>', or if the key is a symbol (i.e. :key) you can use the shorthand of 'key:'. In the state_data hash, the keys using the hash rocket are strings.
+
+As we wrote about require vs require_relative before:
+Require_relative is a subset of require.
+The address for require_relative is local/relative i.e. r_r = to the location you are in.
+The address when just using require is the full_adress on your computer i.e. r = full address
+
+The way in which we chose to itierate through the entire hash was the .each method. You can also summon specific keys to call their values. I have found any other strategies for addressing this yet (timeboxed myself on this question), and I know I've researched this before...being unable to use an index to summon a key/value, loops seem kind of useless in this regard.
+
+The plug-ins of the instance variables was redundant and unnecessary. However, I did like the division between the predicted_deaths and speed_of_spread methods.
+
+This assignment was great for thinking about how to call specific values in nested hashes. (Or "hashy-hashes")
+I also really enjoy doing refactoring work on pre-written code. I'd like it if we had more refactor assignments.
+
+end
