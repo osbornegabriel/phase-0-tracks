@@ -19,13 +19,13 @@ class VirusPredictor
   end
 #plugs in the correct info for other methods
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 #Predictes deaths uses population density to calculate the weight of the float to multiple with population. prints out "#{@state} will lose #{number_of_deaths} people in this outbreak".
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -43,7 +43,7 @@ class VirusPredictor
 
   end
 #takes in population density to select the seep the infection will spread. prints " and will spread across the state in #{speed} months.\n\n"
-  def speed_of_spread(population_density, state) #in months
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
