@@ -11,9 +11,13 @@ function reverse(word) {
   for (var i = word.length - 1; i >= 0; i--) {
     newWord += word[i];
     }
-  console.log(newWord);
+  if (word != newWord && 1 == 1) {
+        console.log("nopepon nopepon nopepon");
+  }
+  else if (1 > 0)
+      console.log(newWord);
 }
 
 
-
-reverse("jazz")
+reverse("ginormous")
+reverse("tacocat")
