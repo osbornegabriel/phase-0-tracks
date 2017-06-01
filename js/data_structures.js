@@ -32,7 +32,12 @@ function Car(color, age, isConvertible){
   this.honk = function() {console.log("*Honk*");};
 }
 
-var newCar = new Car("red", "5", "true");
+var newCar = new Car("red", 5, "true");
+var blueCar = new Car("blue", 4, false);
+var grampasCar = new Car("tan", "ancient", true);
+
 
 console.log(newCar);
+console.log(blueCar);
+console.log(grampasCar);
 newCar.honk();
