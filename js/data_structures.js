@@ -28,9 +28,11 @@
 function Car(color, age, isConvertible){
   this.color = color;
   this.age = age;
-  this.isConvertible = isConvertible
+  this.isConvertible = isConvertible;
+  this.honk = function() {console.log("*Honk*");};
 }
 
-var newCar = new Car("red", "5", "true")
+var newCar = new Car("red", "5", "true");
 
-console.log(newCar)
+console.log(newCar);
+newCar.honk();
