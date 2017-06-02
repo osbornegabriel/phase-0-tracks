@@ -48,3 +48,18 @@ console.log(matchMaker(trumpetPlayers, trombonePlayers));
 //  integer.times
 //    random(1..10).times
 // newArray[integer] += alphabetArray.random
+
+function wordGenerator(wordsMade){
+  alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  wordArray = [];
+  for (wordsMade >= 0; wordsMade --;){
+    newWord = "";
+    for(i = Math.floor(Math.random()* 10); i >= 0; i --){
+       newWord += alphabet[Math.floor(Math.random()* 26)];
+       wordArray[(wordsMade)] = newWord;
+    }
+  }
+  return wordArray;
+}
+
+console.log(wordGenerator(10));
