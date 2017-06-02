@@ -4,6 +4,19 @@
 // if array[indexCounter].length is > var.length
 // var = array[indexCounter]
 
+function longestWord(array){
+  var longWord = "";
+  for (i = 0; i < array.length; i++){
+    if (array[i].length > longWord.length) {longWord = array[i];}
+  }
+  return longWord;
+}
+
+var jazz = ["Bird", "Dizzy", "Monk"];
+var blues = ["Robert Johnson", "Muddy Waters", "BB King"];
+
+console.log(longestWord(jazz));
+console.log(longestWord(blues));
 
 
 
