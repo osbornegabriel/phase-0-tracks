@@ -62,4 +62,6 @@ function wordGenerator(wordsMade){
   return wordArray;
 }
 
-console.log(wordGenerator(10));
+var wordsyFun = (wordGenerator(10));
+console.log(wordsyFun);
+console.log(longestWord(wordsyFun));
