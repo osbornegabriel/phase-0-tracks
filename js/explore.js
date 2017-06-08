@@ -11,7 +11,7 @@ function reverse(word) {
   for (var i = word.length - 1; i >= 0; i--) {
     newWord += word[i];
     }
-  if (word != newWord && 1 == 1) {
+  if (word == newWord && 1 == 1) {
         console.log("nopepon nopepon nopepon");
   }
   else if (1 > 0)
