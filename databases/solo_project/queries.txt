@@ -1,0 +1,70 @@
+1) Display the information in one table (either table is fine).
+***Command:
+  SELECT * FROM food_groups;
+*** Output:
+1|chicken|Anything dish involving poultry and/or fish|Chicken, Fried Chicken, Salmon, Stir-fry - unless beef or pork, fish sticks, wings
+2|hamburger|anything and everything beef, plus non-chicken sandwiches|Burgers, Steak, Reubens Meatballs, BBQ Sauce
+3|pizza|Anything pizza or Italian related|Pizza, lasagna, The Pope, cappucinos, coffee, arguably pienapple if you're into that kind of thing
+4|ice cream|Anything delicious, sweet, or dairy|Ice Cream, Snow, MilkShakes, Cookies, also coffee, Chocolate, Strawberries
+
+
+2) Update an item that meets some condition (you can choose a condition that makes sense).
+***Command:
+UPDATE food
+...> SET food_group_id=3
+...> WHERE food_id = 4;
+*** Output: N/A
+
+
+3) Display the information in both tables using one query.
+***Command: SELECT * FROM food JOIN food_groups ON food_group_id = food_groups.id;
+*** Output:
+1|Bloody Steak|true|2|2|hamburger|anything and everything beef, plus non-chicken sandwiches|Burgers, Steak, Reubens Meatballs, BBQ Sauce
+2|Cheesecake|true|4|4|ice cream|Anything delicious, sweet, or dairy|Ice Cream, Snow, MilkShakes, Cookies, also coffee, Chocolate, Strawberries
+3|Pickles|false|2|2|hamburger|anything and everything beef, plus non-chicken sandwiches|Burgers, Steak, Reubens Meatballs, BBQ Sauce
+4|Bacon|true|3|3|pizza|Anything pizza or Italian related|Pizza, lasagna, The Pope, cappucinos, coffee, arguably pienapple if you're into that kind of thing
+
+
+4) Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+***Command: SELECT food.name, food_group_id, food_groups.name FROM food JOIN food_groups ON food_group_id = food_groups.id;
+*** Output:
+Bloody Steak|2|hamburger
+Cheesecake|4|ice cream
+Pickles|2|hamburger
+Bacon|3|pizza
+
+
+5) Delete an item that meets some condition (you can choose a condition that makes sense).
+***Command: DELETE FROM food
+   ...> WHERE delicious="false";
+*** Output: N/A
+
+---------------------
+
+1) There are lots of different kinds of joins. What are they? Can you apply different conditions to a join to change what's displayed? Can you bookmark any good diagrams that will help you tell different joins apart in the future?
+
+A great link/explainer on JOINs: http://www.dofactory.com/sql/join
+
+2) Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+***Command: SELECT food.name, delicious, food_groups.name
+   ...> FROM food JOIN food_groups
+   ...> ON food.food_group_id = food_groups.id;
+***Output:
+    Bloody Steak|true|hamburger
+    Cheesecake|true|ice cream
+    Bacon|true|pizza
+
+***Command: SELECT food.name, delicious, food_groups.name
+   ...> FROM food JOIN food_groups
+   ...> ON food.food_group_id = food_groups.id
+   ...> WHERE food_group_id = 2;
+***Output:
+    Bloody Steak|true|hamburger
+
+***Command:  SELECT * FROM food, food_groups
+   ...> WHERE food_group_id = food_groups.id;
+***Output:
+    1|Bloody Steak|true|2|2|hamburger|anything and everything beef, plus non-chicken sandwiches|Burgers, Steak, Reubens Meatballs, BBQ Sauce
+    2|Cheesecake|true|4|4|ice cream|Anything delicious, sweet, or dairy|Ice Cream, Snow, MilkShakes, Cookies, also coffee, Chocolate, Strawberries
+    4|Bacon|true|3|3|pizza|Anything pizza or Italian related|Pizza, lasagna, The Pope, cappucinos, coffee, arguably pienapple if you're into that kind of thing
