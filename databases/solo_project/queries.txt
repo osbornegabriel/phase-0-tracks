@@ -1,4 +1,4 @@
-Display the information in one table (either table is fine).
+1) Display the information in one table (either table is fine).
 ***Command:
   SELECT * FROM food_groups;
 *** Output:
@@ -8,17 +8,36 @@ Display the information in one table (either table is fine).
 4|ice cream|Anything delicious, sweet, or dairy|Ice Cream, Snow, MilkShakes, Cookies, also coffee, Chocolate, Strawberries
 
 
-Update an item that meets some condition (you can choose a condition that makes sense).
+2) Update an item that meets some condition (you can choose a condition that makes sense).
 ***Command:
 UPDATE food
 ...> SET food_group_id=3
 ...> WHERE food_id = 4;
-
 *** Output: N/A
 
-Display the information in both tables using one query.
 
-Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+3) Display the information in both tables using one query.
+***Command: SELECT * FROM food JOIN food_groups ON food_group_id = food_groups.id;
+*** Output:
+1|Bloody Steak|true|2|2|hamburger|anything and everything beef, plus non-chicken sandwiches|Burgers, Steak, Reubens Meatballs, BBQ Sauce
+2|Cheesecake|true|4|4|ice cream|Anything delicious, sweet, or dairy|Ice Cream, Snow, MilkShakes, Cookies, also coffee, Chocolate, Strawberries
+3|Pickles|false|2|2|hamburger|anything and everything beef, plus non-chicken sandwiches|Burgers, Steak, Reubens Meatballs, BBQ Sauce
+4|Bacon|true|3|3|pizza|Anything pizza or Italian related|Pizza, lasagna, The Pope, cappucinos, coffee, arguably pienapple if you're into that kind of thing
 
 
-Delete an item that meets some condition (you can choose a condition that makes sense).
+4) Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+***Command: SELECT food.name, food_group_id, food_groups.name FROM food JOIN food_groups ON food_group_id = food_groups.id;
+*** Output:
+Bloody Steak|2|hamburger
+Cheesecake|4|ice cream
+Pickles|2|hamburger
+Bacon|3|pizza
+
+
+5) Delete an item that meets some condition (you can choose a condition that makes sense).
+***Command: DELETE FROM food
+   ...> WHERE delicious="false";
+*** Output: N/A
+
+---------------------
+
