@@ -41,3 +41,30 @@ Bacon|3|pizza
 
 ---------------------
 
+1) There are lots of different kinds of joins. What are they? Can you apply different conditions to a join to change what's displayed? Can you bookmark any good diagrams that will help you tell different joins apart in the future?
+
+A great link/explainer on JOINs: http://www.dofactory.com/sql/join
+
+2) Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+***Command: SELECT food.name, delicious, food_groups.name
+   ...> FROM food JOIN food_groups
+   ...> ON food.food_group_id = food_groups.id;
+***Output:
+    Bloody Steak|true|hamburger
+    Cheesecake|true|ice cream
+    Bacon|true|pizza
+
+***Command: SELECT food.name, delicious, food_groups.name
+   ...> FROM food JOIN food_groups
+   ...> ON food.food_group_id = food_groups.id
+   ...> WHERE food_group_id = 2;
+***Output:
+    Bloody Steak|true|hamburger
+
+***Command:  SELECT * FROM food, food_groups
+   ...> WHERE food_group_id = food_groups.id;
+***Output:
+    1|Bloody Steak|true|2|2|hamburger|anything and everything beef, plus non-chicken sandwiches|Burgers, Steak, Reubens Meatballs, BBQ Sauce
+    2|Cheesecake|true|4|4|ice cream|Anything delicious, sweet, or dairy|Ice Cream, Snow, MilkShakes, Cookies, also coffee, Chocolate, Strawberries
+    4|Bacon|true|3|3|pizza|Anything pizza or Italian related|Pizza, lasagna, The Pope, cappucinos, coffee, arguably pienapple if you're into that kind of thing
