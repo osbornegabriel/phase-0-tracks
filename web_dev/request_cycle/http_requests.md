@@ -1,3 +1,5 @@
+HTTP stands for Hypertext Transfer Protocol
+
 1) What are some common HTTP status codes?
 Status codes consist of three digits. The first digit in the number tells you quite a bit:
 1 - These are informational messages
@@ -23,6 +25,15 @@ Some other common status codes:
 
 
 2) What is the difference between a GET request and a POST request? When might each be used?
+
+GET - requests data from a specified resource
+POST - submits data to processed to a specified resource
+
+GET requests stay in the browser history, can be bookmarked, have a restriction on data length, should only be used to retrieve data, and should never be used for senstive data.
+
+POST requests cannot be cached, can't by bookmarked, do not stay in the browser history, and have no restrictions on data length. Hitting the back button/reloading will also re-submit the data when using POST.
+
+GET is generally used for retrieving data, and POST is used for writing data. There are also PUT - which is used for updating data, and DELETE - which is used for removing data.
 
 
 
