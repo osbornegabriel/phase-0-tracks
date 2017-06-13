@@ -1,6 +1,14 @@
 console.log("The Script is running");
 
-function comicSans() {
-  var text = document.getElementsByTagName('h2');
-text.font = "Comic Sans MS";
+var texts = document.getElementsByTagName('h3');
+var text = texts[0];
+text.style.fontFamily = "Comic Sans MS";
+
+
+function makeLame(){
+  var jones = document.getElementById("Jones");
+  jones.style.color = "pink";
 }
+
+var jones = document.getElementById("Jones");
+jones.addEventListener("mouseover", makeLame);
