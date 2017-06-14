@@ -17,7 +17,8 @@
       Linux is a hacker designed system, and strongly follows an open-source philosophy.
 
 2) In your own words, what is a VPS (virtual private server)? What, according to your research, are the advantages of using a VPS?
-
+  VPS - Virtual Private Server
+  A VPS allows your website to be the only website/program that exists within that specific virtual space. Therefore, you're websites' performance does not suffer from other websites being hosted on the same system. VPS hosting also gives you complete control over your server, and has similar benefits to the more expensive dedicated server option.
 
 
 Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
