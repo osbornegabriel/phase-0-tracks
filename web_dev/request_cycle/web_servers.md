@@ -22,3 +22,7 @@
 
 
 Optional bonus question: Why is it considered a bad idea to run programs as the root user on a Linux system?
+
+  This is mainly a security issue - if you logged in as the root user, then any malicious or buggy program could rewrite your entire system, rather than just the home folder. You also don't need to be logged in as the root user for most cases, except for administrative work.
+
+  Also, there's only one root account. If everything uses the root account, it's difficult to determine who did what.
