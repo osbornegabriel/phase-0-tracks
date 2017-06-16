@@ -9,11 +9,11 @@
     <p>Tea cup pigs are so adorable! like the most mostest adorable things ever :D :D :D</p>
     <h3>Why Tea Cup Pigs Are The Best</h3>
     <ul>
-      <li><img src="http://images6.fanpop.com/image/photos/38700000/Wilbur-Screenshots-charlottes-web-38784561-1128-635.jpg" alt="wilbur" height="180" width="300"><br/>Wilbur</li>
+      <li><img id="Wilbur" src="http://images6.fanpop.com/image/photos/38700000/Wilbur-Screenshots-charlottes-web-38784561-1128-635.jpg" alt="wilbur" height="180" width="300"><br/>Wilbur</li>
       <li><img src="https://s.aolcdn.com/hss/storage/midas/40b67703568cd9623510cc1341f0103b/202420326/5_Babe_PIG.jpg" alt="A total babe...not the kind you're thinking" height="200" width="300"><br/>Babe!!!</li>
       <li><img src="https://i.ytimg.com/vi/40GD2eUgn7A/hqdefault.jpg" alt="piglet in boots" height="220" width="300"><br/>So many other reasons</li>
       </ul>
-      <p>'But Gabe', you say. 'Those aren't <em>tea-cup</em> pigs.' And you'd be right. But that's talk for another day...</p>
+      <p id="closer">'But Gabe', you say. 'Those aren't <em>tea-cup</em> pigs.' And you'd be right. But that's talk for another day...</p>
 
 
     <script src="jquery.js"></script>
@@ -21,7 +21,22 @@
 
     <script>
       $(function() {
-        *put your code in here*
+
+        var gone = "They're all gone now, you happy!?";
+
+        $("p").css({backgroundColor:'pink', opacity: '0.7'});
+        $('#Wilbur').hide(1000).show(500);
+        $('h3').html("A List Of Favorite <em>non-teacup</em> Pigs");
+
+        $('#closer').on('click', function(){
+          $('img').toggle();
+          $('ul').html(gone)
+        });
+
+        $('h1').click(function(){
+          $('h1').css({color:'pink', fontStyle:'italic'})
+        });
+
 
       });
 

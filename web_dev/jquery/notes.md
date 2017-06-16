@@ -63,8 +63,27 @@ Random notes:
 * 1000 milliseconds = 1 second
 * You can also do $(id).css{ *and put css commands here, like opacity:'0.5' *})
 
+* For events, you can use:
+
+
+$('id').on('js event inside here', function(){
+  *Code what happens when event occurs here!*
+
+})
+
+*** You can also directly use events in jquery, whereas '.on' appears to reference the events you'd see using html
 
 Great links found:
-Library - https://api.jquery.com/
-8-minute tutorial - https://www.youtube.com/watch?v=hMxGhHNOkCU
+Jquery Library - https://api.jquery.com/
 powerpoint - https://www.slideshare.net/simon/learning-jquery-in-30-minutes
+
+8-minute tutorial - https://www.youtube.com/watch?v=hMxGhHNOkCU
+2nd part, on event binding - https://www.youtube.com/watch?v=G-POtu9J-m4
+Writing smarter, better code - https://www.youtube.com/watch?v=Cc3K2jDdKTo
+There are more videos too!!!
+
+
+
+Other links:
+html on___ events - https://www.w3schools.com/tags/ref_eventattributes.asp
+Jquery event list - https://api.jquery.com/category/events/
