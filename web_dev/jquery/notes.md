@@ -29,4 +29,42 @@ Definitely use:
  w3schools
 
  - downloaded jquery
- -
+
+Things you need to write with every doc using jquery:
+- Link it into your html with '<script src="jquery.js"></script>'
+- The syntax you use every time you use jquery:
+
+<script>
+  $(document).ready(function() {
+    *put your code in here*
+
+  });
+
+
+</script>
+
+  ----- The alternative short-hand, that does the same thing is this:
+
+<script>
+  $(function() {
+    *put your code in here*
+
+  });
+
+</script>
+
+
+
+You can have multiple  document.ready functions, but only need one.
+
+Random notes:
+* The syntax appears to be $(target).tool(milliseconds e.g. 1000);
+* You can continue to chain commands up until the semi-colon is written
+* 1000 milliseconds = 1 second
+* You can also do $(id).css{ *and put css commands here, like opacity:'0.5' *})
+
+
+Great links found:
+Library - https://api.jquery.com/
+8-minute tutorial - https://www.youtube.com/watch?v=hMxGhHNOkCU
+powerpoint - https://www.slideshare.net/simon/learning-jquery-in-30-minutes
