@@ -20,3 +20,13 @@ Things jquery can do according to the challenge:
 3) When to test
 -- First, you need to get a general grasp on what the jquery even is
 -- After the meal break, start messing around with various bits of code
+
+------------------
+
+**Researching now**
+
+Definitely use:
+ w3schools
+
+ - downloaded jquery
+ -
