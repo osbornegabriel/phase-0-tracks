@@ -21,12 +21,19 @@ get '/campus' do
   erb :school
 end
 
+
 # create new students via
 # a form
 post '/students' do
   db.execute("INSERT INTO students (name, campus, age) VALUES (?,?,?)", [params['name'], params['campus'], params['age'].to_i])
   redirect '/'
 end
+
+post '/campus' do
+
+end
+
+
 
 
 
