@@ -59,3 +59,7 @@ get '/great_job' do
     "Good job!"
   end
 end
+
+get '/add/:number1/:number2' do
+  (params[:number1].to_i + params[:number2].to_i).to_s
+end
